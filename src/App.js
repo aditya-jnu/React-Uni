@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Head from "./components/Head";
+import Content from "./components/Content";
+import Foot from "./components/Foot";
+import { useState } from "react";
 
 function App() {
+
+  const [ipValue, setipValue]=useState('');
+
+  function getValue(x){
+    let y=x;
+    console.log("Inside App ",y);
+    setipValue(y);
+ }
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Head getVal={getValue}/>
+      <Content search={ipValue}/>
+      <Foot/>
     </div>
   );
 }
-
 export default App;
