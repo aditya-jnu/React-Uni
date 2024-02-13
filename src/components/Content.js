@@ -18,7 +18,6 @@ function Content(props){
         setArr(val);
       }).catch((error)=>{
         console.log("Error Fetching Data ",error);
-        document.getElementsByClassName("info")[0].innerHTML="Error Loading!!"
         });
     }
    },[props.search]);
